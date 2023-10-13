@@ -140,4 +140,15 @@ The plan consists of 10 tasks.
 
 ## Diagram of entire process
 
+Below is the entire process we have just set up, from start to end. 
+
+We began by creating a webhook listener that will wait until we pushed to ou github repo
+
+Once we did, github then passes the code to jenkins.
+
+Jenkins will take the code and test it on one of the agent nodes.
+
+Due to the way we have set up our pipeline, if all tests pass, the code will then be merged with the main branch. It will then be deployed to the web server where it is hosted.
+
+
 ![](diagram.PNG)
