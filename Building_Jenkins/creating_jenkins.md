@@ -40,8 +40,9 @@
 
 5. **Admin account**
 
-    You can either create an account or skip and log in as admin.
+    You can either create an account or skip and log in as admin. Our password will be the initial admin password we copied and entered previously.
 
+![](skip_admin.PNG)
 
 ### Creating an environment
 
