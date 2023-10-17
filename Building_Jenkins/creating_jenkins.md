@@ -21,10 +21,11 @@
 
    ```bash
    sudo apt update
-   sudo apt install openjdk-11-jdk
+   sudo apt install default-jdk
    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
    sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
-   sudo apt update
+   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5BA31D57EF5975CA
+   sudo apt-get update
    sudo apt install jenkins
    ```
 
@@ -46,11 +47,11 @@
 
 ### Creating an environment
 
-This is how we will configure our jenkins, but for this case we will use the suggested plugins as these are all we need. However we need to add two more plugins. While on the dashboard, click on manage jenkins and select plugins. Go to available plugins and search for ssh agent, we will need this later on. Next we need to install the office 365 connector plugin in too.
+This is how we will configure our jenkins, but for this case we will use the suggested plugins as these are all we need. However we need to add two more plugins. While on the dashboard, click on manage jenkins and select plugins. Go to available plugins and search for ssh agent, we will need this later on. Next we need to install the office 365 connector plugin in too. Nodejs too.
 
 ![](ssh_agent.PNG)
 
-We need to also configure the gitbash terminal to work with github.
+We need to also configure the gitbash terminal to work with github. After we type in private keys, enter the following.
 
 `sudo su - jenkins`
 
@@ -58,6 +59,9 @@ We need to also configure the gitbash terminal to work with github.
 
 This will add github to a known host list and allow jenkins to connect to it.
 
-## Creating pipeline.
+Go to Manage Jenkins > Manage Plugins and go to nodejs section. Add a new nodejs installation. This will allow us to deploy our node js app.
 
-Now we are on the main page we can begin to create our job.
+Now we are on the main page we can begin to create our job. Follow the steps in previous markdown to create our pipeline.
+
+
+![](pipeline.png)
